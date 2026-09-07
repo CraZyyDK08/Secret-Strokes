@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dij51rd5dl3pw" path="res://Art Imposter Godot/Main.gd" id="1_xic27"]
 [ext_resource type="Script" uid="uid://cwssrsu6ufui7" path="res://DrawingCanvas.gd" id="2_k68ye"]
+[ext_resource type="Script" uid="uid://dd8tcfo02f1vf" path="res://Art Imposter Godot/Game_Manager.gd" id="3_k68ye"]
 
 [node name="Main" type="Node2D" unique_id=397117287]
 script = ExtResource("1_xic27")
@@ -110,3 +111,10 @@ offset_bottom = 640.0
 min_value = 1.0
 max_value = 50.0
 value = 10.0
+
+[node name="GameManager" type="Node" parent="." unique_id=1269539983]
+script = ExtResource("3_k68ye")
+
+[node name="PlayerPanel" type="VBoxContainer" parent="." unique_id=1260643862]
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cfpx6h3cccern"]
+
+[ext_resource type="Script" uid="uid://cjw6kqul1vumb" path="res://Player_Card.gd" id="1_hrq6h"]
+
+[node name="Player_Card" type="Panel" unique_id=688217608]
+custom_minimum_size = Vector2(200, 60)
+custom_maximum_size = Vector2(200, 60)
+offset_left = 20.0
+offset_top = 150.0
+offset_right = 220.0
+offset_bottom = 210.0
+script = ExtResource("1_hrq6h")
+
+[node name="Avatar" type="TextureRect" parent="." unique_id=1386034796]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Nickname" type="Label" parent="." unique_id=840292282]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Status" type="Label" parent="." unique_id=95589921]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Background" type="ColorRect" parent="." unique_id=1008528690]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
