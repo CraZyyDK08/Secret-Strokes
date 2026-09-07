@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://2aci1cg4ck4h"]
+
+[ext_resource type="Script" uid="uid://dij51rd5dl3pw" path="res://Art Imposter Godot/Main.gd" id="1_xic27"]
+[ext_resource type="Script" uid="uid://cwssrsu6ufui7" path="res://DrawingCanvas.gd" id="2_k68ye"]
+
+[node name="Main" type="Node2D" unique_id=397117287]
+script = ExtResource("1_xic27")
+
+[node name="DrawingCanvas" type="TextureRect" parent="." unique_id=557282196]
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 1150.0
+offset_bottom = 750.0
+script = ExtResource("2_k68ye")
+
+[node name="PencilButton" type="Button" parent="." unique_id=31477778]
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 120.0
+offset_bottom = 100.0
+text = "Blyant"
+
+[node name="EraserButton" type="Button" parent="." unique_id=1137522038]
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 170.0
+text = "Viskelæder"
+
+[node name="ClearButton" type="Button" parent="." unique_id=930492789]
+offset_left = 20.0
+offset_top = 190.0
+offset_right = 120.0
+offset_bottom = 240.0
+text = "Ryd canvas"
+
+[node name="UndoButton" type="Button" parent="." unique_id=440084857]
+offset_left = 20.0
+offset_top = 260.0
+offset_right = 42.0
+offset_bottom = 291.0
+text = "↩"
+
+[node name="RedoButton" type="Button" parent="." unique_id=1111281365]
+offset_left = 64.0
+offset_top = 260.0
+offset_right = 86.0
+offset_bottom = 291.0
+text = "↪"
+
+[node name="ColorPanel" type="HBoxContainer" parent="." unique_id=1527049141]
+offset_left = 150.0
+offset_top = 600.0
+offset_right = 750.0
+offset_bottom = 650.0
+
+[node name="Color1" type="Button" parent="ColorPanel" unique_id=822583299]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color2" type="Button" parent="ColorPanel" unique_id=1566393810]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color3" type="Button" parent="ColorPanel" unique_id=1114256760]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color4" type="Button" parent="ColorPanel" unique_id=2075733136]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color5" type="Button" parent="ColorPanel" unique_id=473112695]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color6" type="Button" parent="ColorPanel" unique_id=1020494512]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color7" type="Button" parent="ColorPanel" unique_id=896139659]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color8" type="Button" parent="ColorPanel" unique_id=1498151392]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color9" type="Button" parent="ColorPanel" unique_id=1992331006]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color10" type="Button" parent="ColorPanel" unique_id=795709020]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color11" type="Button" parent="ColorPanel" unique_id=1394269981]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="Color12" type="Button" parent="ColorPanel" unique_id=883216814]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="SizeSlider" type="HSlider" parent="." unique_id=1140234215]
+offset_left = 800.0
+offset_top = 600.0
+offset_right = 1050.0
+offset_bottom = 640.0
+min_value = 1.0
+max_value = 50.0
+value = 10.0
