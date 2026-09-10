@@ -1,108 +1,157 @@
 [gd_scene format=3 uid="uid://b6hvdd7v5f0s2"]
 
-[ext_resource type="Script" uid="uid://dij51rd5dl3pw" path="res://Art Imposter Godot/Main.gd" id="1_74hi7"]
-[ext_resource type="Script" uid="uid://cwssrsu6ufui7" path="res://DrawingCanvas.gd" id="2_xcxtd"]
+[ext_resource type="Script" uid="uid://dij51rd5dl3pw" path="res://Art Imposter Godot/Main.gd" id="1_rbhwd"]
+[ext_resource type="Script" uid="uid://cwssrsu6ufui7" path="res://DrawingCanvas.gd" id="2_68wrd"]
+[ext_resource type="Script" uid="uid://dd8tcfo02f1vf" path="res://Art Imposter Godot/game_manager.gd" id="3_68wrd"]
+[ext_resource type="Script" uid="uid://duuqn4li60ng3" path="res://Art Imposter Godot/test_node.gd" id="4_k0oxs"]
 
-[node name="Main" type="Node2D" unique_id=397117287]
-script = ExtResource("1_74hi7")
+[node name="Main" type="Node2D" unique_id=397117287 node_paths=PackedStringArray("drawing_canvas", "pencil_button", "eraser_button", "clear_button", "color_panel", "size_slider", "undo_button", "redo_button")]
+script = ExtResource("1_rbhwd")
+drawing_canvas = NodePath("UI/DrawingPanel/DrawingCanvas")
+pencil_button = NodePath("UI/DrawingPanel/PencilButton")
+eraser_button = NodePath("UI/DrawingPanel/EraserButton")
+clear_button = NodePath("UI/DrawingPanel/ClearButton")
+color_panel = NodePath("UI/DrawingPanel/ColorPanel")
+size_slider = NodePath("UI/DrawingPanel/SizeSlider")
+undo_button = NodePath("UI/DrawingPanel/UndoButton")
+redo_button = NodePath("UI/DrawingPanel/RedoButton")
 
-[node name="DrawingCanvas" type="TextureRect" parent="." unique_id=557282196]
+[node name="GameManager" type="Node" parent="." unique_id=365044830]
+script = ExtResource("3_68wrd")
+
+[node name="TestNode" type="Node" parent="." unique_id=453457865 node_paths=PackedStringArray("game_manager")]
+script = ExtResource("4_k0oxs")
+game_manager = NodePath("../GameManager")
+
+[node name="UI" type="Control" parent="." unique_id=573311012]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyPanel" type="Panel" parent="UI" unique_id=2079481476]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DrawingPanel" type="Panel" parent="UI" unique_id=1631588141]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DrawingCanvas" type="TextureRect" parent="UI/DrawingPanel" unique_id=557282196]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 50.0
 offset_right = 1150.0
 offset_bottom = 750.0
 script = ExtResource("2_xcxtd")
 
-[node name="PencilButton" type="Button" parent="." unique_id=31477778]
+[node name="PencilButton" type="Button" parent="UI/DrawingPanel" unique_id=31477778]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 50.0
 offset_right = 120.0
 offset_bottom = 100.0
 text = "Blyant"
 
-[node name="EraserButton" type="Button" parent="." unique_id=1137522038]
-offset_left = 20.0
-offset_top = 120.0
-offset_right = 120.0
-offset_bottom = 170.0
-text = "Viskelæder"
-
-[node name="ClearButton" type="Button" parent="." unique_id=930492789]
+[node name="ClearButton" type="Button" parent="UI/DrawingPanel" unique_id=930492789]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 190.0
 offset_right = 120.0
 offset_bottom = 240.0
 text = "Ryd canvas"
 
-[node name="UndoButton" type="Button" parent="." unique_id=440084857]
+[node name="EraserButton" type="Button" parent="UI/DrawingPanel" unique_id=1137522038]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 120.0
+offset_right = 120.0
+offset_bottom = 170.0
+text = "Viskelæder"
+
+[node name="UndoButton" type="Button" parent="UI/DrawingPanel" unique_id=440084857]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 260.0
 offset_right = 42.0
 offset_bottom = 291.0
 text = "↩"
 
-[node name="RedoButton" type="Button" parent="." unique_id=1111281365]
+[node name="RedoButton" type="Button" parent="UI/DrawingPanel" unique_id=1111281365]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 260.0
 offset_right = 86.0
 offset_bottom = 291.0
 text = "↪"
 
-[node name="ColorPanel" type="HBoxContainer" parent="." unique_id=1527049141]
+[node name="ColorPanel" type="HBoxContainer" parent="UI/DrawingPanel" unique_id=1527049141]
+layout_mode = 0
 offset_left = 150.0
 offset_top = 600.0
 offset_right = 750.0
 offset_bottom = 650.0
 
-[node name="Color1" type="Button" parent="ColorPanel" unique_id=822583299]
+[node name="Color1" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=822583299]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color2" type="Button" parent="ColorPanel" unique_id=1566393810]
+[node name="Color2" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=1566393810]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color3" type="Button" parent="ColorPanel" unique_id=1114256760]
+[node name="Color3" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=1114256760]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color4" type="Button" parent="ColorPanel" unique_id=2075733136]
+[node name="Color4" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=2075733136]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color5" type="Button" parent="ColorPanel" unique_id=473112695]
+[node name="Color5" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=473112695]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color6" type="Button" parent="ColorPanel" unique_id=1020494512]
+[node name="Color6" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=1020494512]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color7" type="Button" parent="ColorPanel" unique_id=896139659]
+[node name="Color7" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=896139659]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color8" type="Button" parent="ColorPanel" unique_id=1498151392]
+[node name="Color8" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=1498151392]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color9" type="Button" parent="ColorPanel" unique_id=1992331006]
+[node name="Color9" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=1992331006]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color10" type="Button" parent="ColorPanel" unique_id=795709020]
+[node name="Color10" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=795709020]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color11" type="Button" parent="ColorPanel" unique_id=1394269981]
+[node name="Color11" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=1394269981]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="Color12" type="Button" parent="ColorPanel" unique_id=883216814]
+[node name="Color12" type="Button" parent="UI/DrawingPanel/ColorPanel" unique_id=883216814]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 
-[node name="SizeSlider" type="HSlider" parent="." unique_id=1140234215]
+[node name="SizeSlider" type="HSlider" parent="UI/DrawingPanel" unique_id=1140234215]
+layout_mode = 0
 offset_left = 800.0
 offset_top = 600.0
 offset_right = 1050.0
@@ -110,3 +159,35 @@ offset_bottom = 640.0
 min_value = 1.0
 max_value = 50.0
 value = 10.0
+
+[node name="DiscussionPanel" type="Panel" parent="UI" unique_id=1815306537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VotingPanel" type="Panel" parent="UI" unique_id=1441420980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ImposterGuessPanel" type="Panel" parent="UI" unique_id=857845707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResultPanel" type="Panel" parent="UI" unique_id=369782306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
