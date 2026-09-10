@@ -1,17 +1,17 @@
-[gd_scene format=3 uid="uid://2aci1cg4ck4h"]
+[gd_scene format=3 uid="uid://b6hvdd7v5f0s2"]
 
-[ext_resource type="Script" uid="uid://dij51rd5dl3pw" path="res://Art Imposter Godot/Main.gd" id="1_xic27"]
-[ext_resource type="Script" uid="uid://cwssrsu6ufui7" path="res://DrawingCanvas.gd" id="2_k68ye"]
+[ext_resource type="Script" uid="uid://dij51rd5dl3pw" path="res://Art Imposter Godot/Main.gd" id="1_74hi7"]
+[ext_resource type="Script" uid="uid://cwssrsu6ufui7" path="res://DrawingCanvas.gd" id="2_xcxtd"]
 
 [node name="Main" type="Node2D" unique_id=397117287]
-script = ExtResource("1_xic27")
+script = ExtResource("1_74hi7")
 
 [node name="DrawingCanvas" type="TextureRect" parent="." unique_id=557282196]
 offset_left = 150.0
 offset_top = 50.0
 offset_right = 1150.0
 offset_bottom = 750.0
-script = ExtResource("2_k68ye")
+script = ExtResource("2_xcxtd")
 
 [node name="PencilButton" type="Button" parent="." unique_id=31477778]
 offset_left = 20.0
