@@ -168,6 +168,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TitleLabel" type="Label" parent="UI/DiscussionPanel" unique_id=1549204894]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Diskuter jeres tegninger!"
+
+[node name="DrawingGrid" type="GridContainer" parent="UI/DiscussionPanel" unique_id=2030904604]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 4
+
 [node name="VotingPanel" type="Panel" parent="UI" unique_id=1441420980]
 layout_mode = 1
 anchors_preset = 15
