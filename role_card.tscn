@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://ccgdx0ont7rd3"]
+
+[ext_resource type="Script" uid="uid://d1lf6p1i2wai7" path="res://role_card.gd" id="1_utwfp"]
+
+[node name="RoleCard" type="Control" unique_id=1209951812]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_utwfp")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2108978803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3083999, 0.3083999, 0.3083999, 1)
+
+[node name="People" type="TextureRect" parent="." unique_id=362703252]
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoleLabel" type="Label" parent="." unique_id=1750199814]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "ROLE"
+
+[node name="SymbolImage" type="TextureRect" parent="." unique_id=1460188344]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HintLabel" type="Label" parent="." unique_id=1905904669]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -37.5
+offset_right = 31.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "HINT
+
+BILLEDE"
+
+[node name="Countdownlabel" type="Label" parent="." unique_id=1647748988]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "5"
+
+[node name="Timer" type="Timer" parent="." unique_id=1846006449]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
