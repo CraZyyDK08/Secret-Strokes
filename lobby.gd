@@ -27,8 +27,17 @@ func _on_start_game_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+	print("Leaving game...")
 
+	# Luk multiplayer-forbindelsen
+	if multiplayer.multiplayer_peer:
+		multiplayer.multiplayer_peer.close()
+
+	# Gå tilbage til main menu
 	get_tree().change_scene_to_file(
 		"res://Art Imposter Godot/MainMenu.tscn"
+	#multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
+
+	#get_tree().change_scene_to_file(
+		#"res://Art Imposter Godot/MainMenu.tscn"
 	)
