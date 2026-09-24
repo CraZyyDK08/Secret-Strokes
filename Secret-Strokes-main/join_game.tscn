@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://b7ekxdlk7d6as"]
+
+[ext_resource type="Script" uid="uid://bjfe7b7cqfktb" path="res://join_game.gd" id="1_mg5cu"]
+
+[node name="JoinGame" type="Control" unique_id=1692657956]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mg5cu")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1257374261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=80665311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -67.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="CenterContainer" unique_id=869986629]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="CenterContainer/Menu" unique_id=467692200]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Join Game"
+horizontal_alignment = 1
+
+[node name="IPLabel" type="Label" parent="CenterContainer/Menu" unique_id=2086679301]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Host IP Address"
+
+[node name="IPInput" type="LineEdit" parent="CenterContainer/Menu" unique_id=1507796574]
+custom_minimum_size = Vector2(500, 60)
+layout_mode = 2
+placeholder_text = "Example: 192.168.1.25"
+
+[node name="CodeLabel" type="Label" parent="CenterContainer/Menu" unique_id=984750174]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "Game Code"
+
+[node name="CodeInput" type="LineEdit" parent="CenterContainer/Menu" unique_id=524875653]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+placeholder_text = "Enter 5-character code"
+
+[node name="JoinButton" type="Button" parent="CenterContainer/Menu" unique_id=166689291]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Join Game"
+
+[node name="BackButton" type="Button" parent="CenterContainer/Menu" unique_id=749566231]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Back"
