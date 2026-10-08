@@ -8,52 +8,76 @@ extends Control
 @onready var timer = $Timer
 
 
-var time_left = 5
+var time_left: int = 5
 
 
 func _ready():
 	
-	# Start timeren
-	timer.start()
-	
 	# Vis spillerens rolle
 	show_role()
 	
-	# Opdater countdown
+	# Start countdown
+	time_left = 5
 	countdown_label.text = str(time_left)
+	
+	# Timeren sender et signal hvert sekund
+	timer.wait_time = 1.0
+	timer.one_shot = false
+	timer.start()
 
 
 func show_role():
 	
-	# MIDlERTIDIG TEST
+	# ==========================================
+	# IMPOSTER
+	# ==========================================
 	
-	# Vi starter med at teste Inno
-	var is_imposter = false
-	
-	
-	if is_imposter:
+	if RoleGameManager.is_imposter:
 		
 		role_label.text = "IMPOSTER"
 		
+		# Imposteren må IKKE se det rigtige ord
 		symbol_image.visible = false
 		
+		# Vis hint
 		hint_label.visible = true
-		hint_label.text = "HINT"
 		
+		hint_label.text = "HINT\n\n" + RoleGameManager.current_hint
+	
+	
+	# ==========================================
+	# INNO
+	# ==========================================
+	
 	else:
 		
 		role_label.text = "INNO"
 		
-		symbol_image.visible = true
+		# Vi bruger ikke billedet endnu
+		symbol_image.visible = false
 		
-		hint_label.visible = false
+		# Inno skal se det rigtige ord
+		hint_label.visible = true
+		
+		hint_label.text = "DIT ORD\n\n" + RoleGameManager.current_word
 
 
 func _on_timer_timeout():
 	
-	# Når kortet er færdigt,
-	# går vi til tegnefunktionen
+	# Gå et sekund ned
+	time_left -= 1
 	
-	get_tree().change_scene_to_file(
-		"res://Art Imposter Godot/Main.tscn"
-	)
+	# Opdater teksten
+	countdown_label.text = str(time_left)
+	
+	
+	# Hvis tiden er gået
+	if time_left <= 0:
+		
+		# Stop timeren
+		timer.stop()
+		
+		# Gå videre til tegneprogrammet
+		get_tree().change_scene_to_file(
+			"res://tegne_program.tscn"
+		)

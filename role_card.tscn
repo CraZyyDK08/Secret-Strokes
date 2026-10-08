@@ -79,7 +79,7 @@ text = "HINT
 
 BILLEDE"
 
-[node name="Countdownlabel" type="Label" parent="." unique_id=1647748988]
+[node name="CountdownLabel" type="Label" parent="." unique_id=1647748988]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

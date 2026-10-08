@@ -259,6 +259,22 @@ func start_game_rpc() -> void:
 
 	game_started.emit()
 
+	# Start nyt spil og vælg ord/roller hvis RoleGameManager eksisterer
+	if RoleGameManager.has_method("start_new_game"):
+		RoleGameManager.start_new_game()
+
+	# Skift til Role Card scenen i stedet for Main.tscn
 	get_tree().change_scene_to_file(
-		"res://Art Imposter Godot/Main.tscn"
+		"res://role_card.tscn"
 	)
+# ==========================================
+# NEXT ROUND RPC
+# ==========================================
+
+@rpc("authority", "call_local", "reliable")
+func change_to_drawing_scene_rpc() -> void:
+	get_tree().change_scene_to_file("res://tegne_program.tscn")
+
+@rpc("authority", "call_local", "reliable")
+func change_to_voting_scene_rpc() -> void:
+	get_tree().change_scene_to_file("res://Voting.tscn")

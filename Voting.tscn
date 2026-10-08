@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://c4vx0l5w0glq4"]
+
+[ext_resource type="Script" uid="uid://c0jvrwfeotvr" path="res://voting.gd" id="1_f6wt5"]
+
+[node name="Voting" type="Control" unique_id=1702211887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f6wt5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=793703118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1837991623]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "Afstemning"
+
+[node name="SubtitleLabel" type="Label" parent="VBoxContainer" unique_id=1192202507]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Hvem tror du er imposter?"
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=21865133]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tid tilbage: 20"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1028721655]
+layout_mode = 2
+
+[node name="PlayerGrid" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=814962571]
+layout_mode = 2
+columns = 3
+
+[node name="GuessPanel" type="PanelContainer" parent="." unique_id=639197323]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = -28.0
+offset_right = 304.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GuessPanel" unique_id=778056105]
+layout_mode = 2
+
+[node name="GuessTitle" type="Label" parent="GuessPanel/VBoxContainer" unique_id=1632073483]
+layout_mode = 2
+text = "Du er blevet stemt ud! Gæt ordet for at vinde:"
+horizontal_alignment = 1
+
+[node name="WordInput" type="LineEdit" parent="GuessPanel/VBoxContainer" unique_id=999315811]
+layout_mode = 2
+
+[node name="SubmitGuessButton" type="Button" parent="GuessPanel/VBoxContainer" unique_id=1158685365]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Send gæt"
+
+[node name="ResultPanel" type="PanelContainer" parent="." unique_id=2100583584]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -55.0
+offset_right = 167.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResultPanel" unique_id=1888175970]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="ResultPanel/VBoxContainer" unique_id=281924130]
+custom_minimum_size = Vector2(0, 0.015)
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="ResultPanel/VBoxContainer" unique_id=531051519]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Spil Igen"
+
+[node name="Timer" type="Timer" parent="." unique_id=1176060203]

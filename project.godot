@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 Network="*uid://b42hu1koy8uhm"
 GameManager="*uid://cb6k0sueaavqf"
+RoleGameManager="*uid://8ax0cc26s3jk"
+GameData="*uid://bjsw3sf2muc4c"
 
 [display]
 

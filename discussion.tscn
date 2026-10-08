@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://fenhel7uyivi"]
+
+[ext_resource type="Script" uid="uid://r262hmsoiuty" path="res://discussion.gd" id="1_i3lw1"]
+
+[node name="Discussion" type="Control" unique_id=1555000230]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i3lw1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1779409248]
+layout_mode = 1
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 652.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1057162824]
+layout_mode = 1
+offset_top = 3.0
+offset_right = 1150.0
+offset_bottom = 652.0
+scale = Vector2(1, 0.16000003)
+color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1414044957]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2032942176]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 1151.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1341320337]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "Diskussion"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="VBoxContainer" unique_id=1279863635]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "30"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer" unique_id=1603604097]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DrawingGrid" type="GridContainer" parent="VBoxContainer/ScrollContainer" unique_id=1675114581]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+columns = 3
